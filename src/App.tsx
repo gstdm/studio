@@ -1,82 +1,124 @@
-import { useState } from "react";
+import React from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
-
   return (
-    <div className={`${darkMode ? "bg-black text-white" : "bg-white text-gray-900"} min-h-screen transition-all duration-300`}>
-      
-      {/* Cabeçalho */}
-      <header className="flex justify-between items-center p-4 fixed w-full top-0 bg-white dark:bg-black shadow-md z-10">
-        <button className="text-pink-500 text-3xl">&#9776;</button>
-        <button onClick={toggleTheme} className="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-800">
-          {darkMode ? "Modo Claro" : "Modo Escuro"}
-        </button>
-      </header>
+    <div className="min-h-screen bg-white flex flex-col">
 
-      {/* Corpo */}
-      <main className="pt-16 p-6 flex flex-col items-center">
-        
-        {/* Imagem e Descrição */}
-        <div className="flex flex-col md:flex-row items-center gap-6 bg-gradient-to-r from-pink-100 to-pink-300 dark:from-pink-900 dark:to-pink-700 p-8 rounded-lg shadow-lg w-full max-w-3xl">
-          <div className="w-40 h-40 bg-gray-300 dark:bg-gray-700 rounded-md"></div>
-          <div>
-            <h1 className="text-2xl font-bold">Realce seu olhar com cílios perfeitos</h1>
-            <p className="mt-2 text-lg">
-              Os cílios são uma moldura para os olhos e podem transformar sua aparência de forma natural e sofisticada.
+      <Navbar />
+
+      {/* Hero Section */}
+      <div className="flex-grow relative bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+              Studio Jeise Lashes: Realce Seu Olhar
+            </h1>
+            <p className="text-lg text-gray-600 mt-4">
+              Transforme seu olhar e autoestima com o design de cílios do Studio Jeise Lashes. Cílios alongados e naturais para um estilo único.
             </p>
-            <p className="mt-2 text-gray-700 dark:text-gray-300">
-              Com técnicas avançadas, nossos alongamentos garantem volume, curvatura e leveza sem prejudicar os fios naturais.
-            </p>
+            <div className="mt-8 flex justify-center gap-4">
+              <a
+                href="/#modelos"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-pink-600 hover:bg-pink-700 transition-all duration-200 shadow-lg shadow-pink-500/30"
+              >
+                Ver Modelos de Cílios
+              </a>
+              <a
+                href="/#agendamento"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-600 hover:bg-gray-700 transition-all duration-200"
+              >
+                Agende Agora
+              </a>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Botão de Modelos */}
-        <button className="mt-8 px-6 py-3 rounded-lg bg-pink-500 text-white text-lg font-semibold hover:bg-pink-600 transition">
-          Ver Modelos de Cílios
-        </button>
+      {/* Vantagens */}
+      <div className="bg-gray-100 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">
+            Descubra as Vantagens do Design de Cílios
+          </h2>
 
-        {/* Vantagens */}
-        <section className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-          <div className="p-6 bg-pink-200 dark:bg-pink-800 rounded-lg shadow-md">
-            <h2 className="font-bold text-xl">✨ Beleza e Autoestima</h2>
-            <p className="text-gray-700 dark:text-gray-300 mt-2">
-              Alongamentos de cílios deixam seu olhar mais expressivo e sofisticado, elevando sua confiança no dia a dia.
-            </p>
+          {/* Benefício 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-8 mb-12 text-center">
+            <img
+              src="https://i.ibb.co/VqHRLjg/Remove-bg-ai-1737834159090.png"
+              alt="Aumente sua autoestima"
+              className="w-2/3 mx-auto rounded-lg shadow-md"
+            />
+            <div className="flex flex-col justify-center items-center text-center">
+              <h3 className="text-2xl font-bold text-gray-800">
+                Aumente Sua Autoestima
+              </h3>
+              <p className="text-gray-500">
+                Realce sua beleza e autoestima com cílios alongados e naturais. O design personalizado de cílios proporciona um olhar mais marcante, deixando você ainda mais confiante.
+              </p>
+            </div>
           </div>
 
-          <div className="p-6 bg-pink-200 dark:bg-pink-800 rounded-lg shadow-md">
-            <h2 className="font-bold text-xl">⏳ Economia de Tempo</h2>
-            <p className="text-gray-700 dark:text-gray-300 mt-2">
-              Esqueça o rímel! Com os cílios perfeitos 24h por dia, você economiza tempo na maquiagem e sempre está pronta.
-            </p>
+          {/* Benefício 2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-8 mb-12 text-center">
+            <img
+              src="https://i.ibb.co/Htz4FQ5/Remove-bg-ai-1737810716652.png"
+              alt="Design Personalizado"
+              className="w-2/3 mx-auto rounded-lg shadow-md"
+            />
+            <div className="flex flex-col justify-center items-center text-center">
+              <h3 className="text-2xl font-bold text-gray-800">
+                Design Personalizado para Você
+              </h3>
+              <p className="text-gray-500">
+                Cada pessoa tem um estilo único, e o design de cílios também deve ser. Personalizamos o alongamento de cílios de acordo com o seu formato de rosto e estilo, realçando a sua beleza natural.
+              </p>
+            </div>
           </div>
 
-          <div className="p-6 bg-pink-200 dark:bg-pink-800 rounded-lg shadow-md">
-            <h2 className="font-bold text-xl">💧 Resistência à Água</h2>
-            <p className="text-gray-700 dark:text-gray-300 mt-2">
-              Nossos cílios são resistentes à água, permitindo que você aproveite piscina, praia e chuvas sem preocupações.
-            </p>
+          {/* Benefício 3 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-8 mb-12 text-center">
+            <img
+              src="https://i.ibb.co/MBmPRYg/Remove-bg-ai-1737834145392.png"
+              alt="Praticidade"
+              className="w-2/3 mx-auto rounded-lg shadow-md"
+            />
+            <div className="flex flex-col justify-center items-center text-center">
+              <h3 className="text-2xl font-bold text-gray-800">
+                Praticidade e Conforto
+              </h3>
+              <p className="text-gray-500">
+                Cílios perfeitos sem precisar de máscara de cílios todos os dias. O alongamento proporciona um olhar sempre impecável, sem esforço.
+              </p>
+            </div>
           </div>
 
-          <div className="p-6 bg-pink-200 dark:bg-pink-800 rounded-lg shadow-md">
-            <h2 className="font-bold text-xl">🌿 Seguro e Confortável</h2>
-            <p className="text-gray-700 dark:text-gray-300 mt-2">
-              Aplicamos fios leves e hipoalergênicos, garantindo um procedimento seguro, confortável e sem danos aos cílios naturais.
-            </p>
+          {/* Benefício 4 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-8 mb-12 text-center">
+            <img
+              src="https://i.ibb.co/58kM5zD/Remove-bg-ai-1737834141576.png"
+              alt="Durabilidade"
+              className="w-2/3 mx-auto rounded-lg shadow-md"
+            />
+            <div className="flex flex-col justify-center items-center text-center">
+              <h3 className="text-2xl font-bold text-gray-800">
+                Durabilidade e Beleza
+              </h3>
+              <p className="text-gray-500">
+                Nossos alongamentos de cílios têm alta durabilidade e garantem um visual natural por semanas, para que você possa se preocupar apenas em brilhar.
+              </p>
+            </div>
           </div>
-        </section>
 
-        {/* Botão Final */}
-        <button className="mt-10 mb-6 px-6 py-3 rounded-lg bg-pink-500 text-white text-lg font-semibold hover:bg-pink-600 transition">
-          Ver Modelos de Cílios
-        </button>
+          {/* Finalização */}
+          <h3 className="text-3xl font-bold text-gray-800 text-center mt-12">
+            Realce sua beleza com o Studio Jeise Lashes!
+          </h3>
+        </div>
+      </div>
 
-      </main>
+      <Footer />
     </div>
   );
 }
